@@ -18,6 +18,30 @@
             padding: 0;
         }
 
+        /* Barra di Navigazione Superiore */
+        .top-nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e1e4e8;
+            padding: 12px 20px;
+            display: block;
+        }
+
+        .nav-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            color: #1b5e20;
+            text-decoration: none;
+            font-size: 10.5pt;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
         /* Header Decorativo */
         .header-banner {
             background-color: #1b5e20;
@@ -64,7 +88,7 @@
             font-size: 18pt;
         }
 
-        /* Griglia delle Funzionalità (Strutturata a blocchi lineari stabili) */
+        /* Griglia delle Funzionalità */
         .feature-card {
             background: #ffffff;
             border: 1px solid #e1e4e8;
@@ -87,6 +111,65 @@
             margin: 0 0 12px 0;
             color: #444d56;
             font-size: 11pt;
+        }
+
+        /* Sezione Download Play Store */
+        .download-section {
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .download-section h2 {
+            margin-top: 0;
+            color: #1b5e20;
+            font-size: 18pt;
+            font-weight: 700;
+        }
+
+        .download-section p {
+            color: #444d56;
+            font-size: 11pt;
+            margin-bottom: 20px;
+        }
+
+        .playstore-button-placeholder {
+            display: inline-block;
+            background-color: #24292e;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 11pt;
+            border: 1px solid #24292e;
+            cursor: default;
+        }
+
+        /* Navigazione di Fine Pagina */
+        .bottom-actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: transparent;
+            color: #1b5e20;
+            padding: 10px 20px;
+            border: 1px solid #1b5e20;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 11pt;
+            text-decoration: none;
+        }
+
+        .btn-home:hover {
+            background-color: #e8f5e9;
         }
 
         /* Badge tecnologici */
@@ -123,11 +206,18 @@
             color: #586069;
             font-size: 10pt;
             border-top: 1px solid #e1e4e8;
-            margin-top: 60px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Barra di Navigazione Superiore -->
+    <div class="top-nav">
+        <div class="nav-container">
+            <a href="https://nexpo83.github.io/nexposstudio/#" class="back-link">← Torna alla Home di neXPo's Studio</a>
+        </div>
+    </div>
 
     <!-- Banner Principale -->
     <div class="header-banner">
@@ -272,6 +362,20 @@
                 <span class="badge badge-sys">Android X</span>
                 <span class="badge badge-sys">Play In-App Updates</span>
             </div>
+        </div>
+
+        <!-- SEZIONE DOWNLOAD PLAY STORE -->
+        <div class="download-section">
+            <h2>Disponibile su Google Play</h2>
+            <p>Scarica SpesaControllo sul tuo smartphone Android per iniziare a gestire la spesa in modo intelligente.</p>
+            <div class="playstore-button-placeholder">
+                🤖 Google Play Store (Prossimamente)
+            </div>
+        </div>
+
+        <!-- AZIONI DI NAVIGAZIONE INFERIORI -->
+        <div class="bottom-actions">
+            <a href="https://nexpo83.github.io/nexposstudio/#" class="btn-home">← Torna alla lista delle applicazioni</a>
         </div>
 
     </div>
