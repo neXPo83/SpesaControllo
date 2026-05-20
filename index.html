@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpesaControllo - Funzionalità Ufficiali</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f6f8fa;
+            color: #24292e;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Decorativo */
+        .header-banner {
+            background-color: #1b5e20;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 4px solid #2e7d32;
+        }
+
+        .header-banner h1 {
+            margin: 0;
+            font-size: 28pt;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header-banner p {
+            margin: 10px 0 0 0;
+            font-size: 14pt;
+            color: #c8e6c9;
+            font-weight: 300;
+        }
+
+        /* Contenitore Principale */
+        .main-container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Intro della pagina */
+        .intro-section {
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .intro-section h2 {
+            margin-top: 0;
+            color: #1b5e20;
+            font-size: 18pt;
+        }
+
+        /* Griglia delle Funzionalità (Strutturata a blocchi lineari stabili) */
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-left: 5px solid #1b5e20;
+            border-radius: 6px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #1b5e20;
+            font-size: 15pt;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            margin: 0 0 12px 0;
+            color: #444d56;
+            font-size: 11pt;
+        }
+
+        /* Badge tecnologici */
+        .badge-container {
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            font-size: 9pt;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+            text-transform: uppercase;
+        }
+
+        .badge-ai {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .badge-sys {
+            background-color: #eceff1;
+            color: #455a64;
+        }
+
+        /* Footer */
+        .footer-page {
+            text-align: center;
+            padding: 40px 20px;
+            color: #586069;
+            font-size: 10pt;
+            border-top: 1px solid #e1e4e8;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Principale -->
+    <div class="header-banner">
+        <h1>SpesaControllo</h1>
+        <p>L'Assistente Smart e Avanzato per la Gestione della Spesa Quotidiana</p>
+    </div>
+
+    <!-- Contenuto Operativo -->
+    <div class="main-container">
+        
+        <div class="intro-section">
+            <h2>Cos'è SpesaControllo?</h2>
+            <p>
+                SpesaControllo non è la solita lista della spesa statica. È un'applicazione nativa progettata 
+                per ottimizzare i tempi all'interno del supermercato, automatizzare il calcolo dei budget, 
+                archiviare le ricevute e dividere intelligentemente le spese personali da quelle idonee ai buoni pasto.
+            </p>
+        </div>
+
+        <!-- 1. Scansione Avanzata -->
+        <div class="feature-card">
+            <h3>📸 Scansione Intelligente dei Cartellini (OCR &amp; AI)</h3>
+            <p>
+                Inquadra il cartellino del prezzo sullo scaffale: l'app isola il testo ed estrae in autonomia il nome del prodotto, 
+                il prezzo unitario e rileva matematicamente eventuali percentuali di sconto (es. 20%, 30%, 50%). Integra un doppio motore 
+                di analisi: uno locale ad alta velocità per i testi standard e uno basato su Intelligenza Artificiale remota per i cartellini più complessi.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Google ML Kit</span>
+                <span class="badge badge-ai">Gemini 2.5 Flash</span>
+            </div>
+        </div>
+
+        <!-- 2. Lavagna Globale -->
+        <div class="feature-card">
+            <h3>📋 Lavagna Globale (Da Acquistare)</h3>
+            <p>
+                Un pannello bottom-sheet scorrevole e sempre accessibile dalla schermata principale. Permette di annotare al volo i prodotti 
+                mancanti a casa prima di andare al supermercato. Quando un articolo viene acquistato e scannerizzato nel carrello, 
+                il motore semantico IA verifica se corrisponde a un elemento della lavagna e propone la rimozione automatica per evitare doppioni.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Material Design</span>
+                <span class="badge badge-ai">Semantic Match AI</span>
+            </div>
+        </div>
+
+        <!-- 3. Inserimento Vocale Avanzato -->
+        <div class="feature-card">
+            <h3>🎙️ Input Vocale Doppia Modalità</h3>
+            <p>
+                Aggiungi prodotti alla lista senza toccare lo schermo. La modalità <strong>Standard</strong> analizza le parole chiave e i separatori vocali 
+                per inserire elenchi multipli separati da virgole. La modalità <strong>Voce AI</strong> elabora il linguaggio naturale: puoi dettare una frase fluida 
+                come <i>"Prendimi del latte, due confezioni di pomodori e lo sgrassatore per i piatti"</i> e l'IA estrarrà chirurgicamente i singoli articoli per te.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Speech Recognizer</span>
+                <span class="badge badge-ai">NLP Gemini Engine</span>
+            </div>
+        </div>
+
+        <!-- 4. Gestione Totale e Buoni Pasto -->
+        <div class="feature-card">
+            <h3>📊 Calcolo del Carrello &amp; Quota Buoni Pasto</h3>
+            <p>
+                Durante la spesa, l'app calcola in tempo reale il totale effettivo applicando gli sconti e le quantità selezionate. 
+                Inoltre, grazie al flag "Alimentare" (impostato manualmente o dedotto in automatico dall'IA), l'app calcola istantaneamente 
+                la quota specifica ideale per essere saldata tramite <strong>Buoni Pasto</strong>, separandola dal totale generale.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Real-Time Math</span>
+                <span class="badge">Filtro Alimentare</span>
+            </div>
+        </div>
+
+        <!-- 5. Foto dello Scontrino Reale -->
+        <div class="feature-card">
+            <h3>🧾 Archivio Ricevute e Foto dello Scontrino Reale</h3>
+            <p>
+                Una volta chiusa e salvata la spesa nell'archivio storico, è possibile associare la foto dello scontrino fiscale cartaceo. 
+                L'icona della fotocamera (posizionata simmetricamente a sinistra del totale della spesa) cambia colore diventando verde quando la foto è presente. 
+                La foto viene copiata nella memoria interna protetta dell'applicazione, rimanendo disponibile anche se il file originale viene eliminato dalla galleria del telefono.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Internal Storage</span>
+                <span class="badge">Photo Archiving</span>
+            </div>
+        </div>
+
+        <!-- 6. Tessere Fedeltà Integrate -->
+        <div class="feature-card">
+            <h3>💳 Integrazione Tessere e Carte Fedeltà</h3>
+            <p>
+                Evita di saltare da un'applicazione all'altra alla cassa del supermercato. Tramite l'icona dedicata, SpesaControllo si collega 
+                direttamente alle principali applicazioni di digitalizzazione tessere (Google Wallet, Stocard, Samsung Wallet). 
+                Un comodo comando a pressione prolungata permette di resettare o cambiare l'applicazione predefinita in qualsiasi momento.
+            </p>
+            <div class="badge-container">
+                <span class="badge">App Interoperability</span>
+                <span class="badge">Quick Launch</span>
+            </div>
+        </div>
+
+        <!-- 7. Condivisione Smart Compressa -->
+        <div class="feature-card">
+            <h3>🔗 Condivisione Liste via Link Compresso</h3>
+            <p>
+                Esporta e invia la tua lista della spesa o la lavagna globale a un altro dispositivo in un click. L'applicazione converte 
+                l'elenco in una stringa JSON, la comprime tramite algoritmo <strong>GZIP</strong> e la codifica in <strong>Base64 URL-Safe</strong>. 
+                Il destinatario riceverà un link compatto che, al click, aprirà automaticamente SpesaControllo importando i dati senza duplicare i prodotti già presenti.
+            </p>
+            <div class="badge-container">
+                <span class="badge">GZIP Compression</span>
+                <span class="badge">Deep Linking</span>
+            </div>
+        </div>
+
+        <!-- 8. Ricerca Storica Semantica -->
+        <div class="feature-card">
+            <h3>🔍 Motore di Ricerca Storico con Statistiche</h3>
+            <p>
+                Vuoi sapere quanto hai pagato un prodotto l'ultima volta o dove lo hai comprato? Il motore di ricerca interroga lo storico delle spese chiuse. 
+                Grazie all'integrazione con l'IA, la ricerca non è solo testuale ma semantica: cercando "cibo gatti" verranno inclusi nei risultati anche prodotti registrati con marchi specifici o varianti. 
+                Il popup mostra i dettagli delle vecchie spese, il prezzo minimo, il prezzo massimo e il totale speso per quella categoria.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Data Analysis</span>
+                <span class="badge badge-ai">Semantic Search</span>
+            </div>
+        </div>
+
+        <!-- 9. Architettura e Fluidità -->
+        <div class="feature-card">
+            <h3>⚙️ Dettagli Tecnici e Interfaccia</h3>
+            <p>
+                L'applicazione è sviluppata prestando massima attenzione alla stabilità operativa in mobilità:
+            </p>
+            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Interfaccia Protetta:</strong> Orientamento forzato in modalità verticale (Portrait) su tutte le schermate per evitare ricaricamenti improvvisi della fotocamera durante l'uso tra gli scaffali.</p>
+            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Gestione Temi:</strong> Supporto nativo completo per Tema Chiaro, Tema Scuro e sincronizzazione automatica con il Tema di Sistema.</p>
+            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Aggiornamenti In-App:</strong> Integrazione con le API ufficiali di Google Play per il download flessibile degli aggiornamenti in background, con avviso di riavvio solo a download ultimato.</p>
+            <div class="badge-container">
+                <span class="badge badge-sys">Android X</span>
+                <span class="badge badge-sys">Play In-App Updates</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-page">
+        <p>&copy; 2026 neXPo's Studio. Sviluppato interamente in ambiente nativo.</p>
+    </div>
+
+</body>
+</html>
