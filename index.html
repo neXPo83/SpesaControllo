@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>AI Controllo Spesa - Funzionalità Ufficiali</title>
     <style>
         *, *::before, *::after {
@@ -16,6 +17,9 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            /* FONDAMENTALE: Annulla l'offset che Google cerca di imporre */
+            top: 0 !important;
+            position: static !important;
         }
 
         /* Barra di Navigazione Superiore */
@@ -23,12 +27,17 @@
             background-color: #ffffff;
             border-bottom: 1px solid #e1e4e8;
             padding: 12px 20px;
-            display: block;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .nav-container {
             max-width: 850px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .back-link {
@@ -36,6 +45,7 @@
             text-decoration: none;
             font-size: 10.5pt;
             font-weight: 600;
+            transition: text-shadow 0.3s ease;
         }
 
         .back-link:hover {
@@ -97,6 +107,12 @@
             padding: 24px;
             margin-bottom: 20px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .feature-card h3 {
@@ -166,6 +182,7 @@
             font-weight: 600;
             font-size: 11pt;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
 
         .btn-home:hover {
@@ -208,24 +225,113 @@
             border-top: 1px solid #e1e4e8;
             margin-top: 40px;
         }
+
+        /* ========================================= */
+        /* FIX DEFINITIVO GOOGLE TRANSLATE           */
+        /* ========================================= */
+
+        .skiptranslate iframe,
+        .goog-te-banner-frame { 
+            position: fixed !important;
+            top: -500px !important;
+            left: -500px !important;
+            width: 1px !important;
+            height: 1px !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        } 
+
+        #goog-gt-tt, .goog-te-balloon-frame { 
+            display: none !important; 
+            visibility: hidden !important; 
+        }
+
+        .goog-text-highlight { 
+            background-color: transparent !important; 
+            box-shadow: none !important; 
+            pointer-events: none !important; 
+        }
+
+        .skiptranslate > font {
+            display: none !important;
+        }
+
+        #google_translate_element {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        /* ========================================= */
+        /* STILE DEL NOSTRO MENU (Adattato Tema Verde) */
+        /* ========================================= */
+        .custom-language-selector {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .custom-language-selector select {
+            background-color: #ffffff;
+            color: #1b5e20;
+            border: 1px solid #e1e4e8;
+            padding: 6px 30px 6px 12px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 10.5pt;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            /* Freccia verde scuro */
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%231b5e20' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: 50%;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .custom-language-selector select:hover {
+            border-color: #2e7d32;
+            box-shadow: 0 0 8px rgba(46, 125, 50, 0.15);
+        }
+
+        .custom-language-selector select option {
+            background-color: #ffffff;
+            color: #24292e;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Barra di Navigazione Superiore -->
     <div class="top-nav">
         <div class="nav-container">
+            <div class="custom-language-selector">
+                <select id="my-custom-lang" onchange="cambiaLingua(this.value)">
+                    <option value="">🌍 Lingua</option>
+                    <option value="it">🇮🇹 Italiano</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                </select>
+            </div>
+
             <a href="https://nexpo83.github.io/nexposstudio/#" class="back-link">← Torna alla Home di neXPo's Studio</a>
         </div>
     </div>
 
-    <!-- Banner Principale -->
+    <div id="google_translate_element"></div>
+
     <div class="header-banner">
         <h1>AI Controllo Spesa</h1>
         <p>L'Assistente Smart e Avanzato per la Gestione della Spesa Quotidiana</p>
     </div>
 
-    <!-- Contenuto Operativo -->
     <div class="main-container">
         
         <div class="intro-section">
@@ -237,7 +343,6 @@
             </p>
         </div>
 
-        <!-- 1. Scansione Avanzata -->
         <div class="feature-card">
             <h3>📸 Scansione Intelligente dei Cartellini (OCR &amp; AI)</h3>
             <p>
@@ -251,7 +356,6 @@
             </div>
         </div>
 
-        <!-- 2. Lavagna Globale -->
         <div class="feature-card">
             <h3>📋 Lavagna Globale (Da Acquistare)</h3>
             <p>
@@ -265,7 +369,6 @@
             </div>
         </div>
 
-        <!-- 3. Inserimento Vocale Avanzato -->
         <div class="feature-card">
             <h3>🎙️ Input Vocale Doppia Modalità</h3>
             <p>
@@ -279,7 +382,6 @@
             </div>
         </div>
 
-        <!-- 4. Gestione Totale e Buoni Pasto -->
         <div class="feature-card">
             <h3>📊 Calcolo del Carrello &amp; Quota Buoni Pasto</h3>
             <p>
@@ -293,7 +395,6 @@
             </div>
         </div>
 
-        <!-- 5. Foto dello Scontrino Reale -->
         <div class="feature-card">
             <h3>🧾 Archivio Ricevute e Foto dello Scontrino Reale</h3>
             <p>
@@ -307,7 +408,6 @@
             </div>
         </div>
 
-        <!-- 6. Tessere Fedeltà Integrate -->
         <div class="feature-card">
             <h3>💳 Integrazione Tessere e Carte Fedeltà</h3>
             <p>
@@ -321,7 +421,6 @@
             </div>
         </div>
 
-        <!-- 7. Condivisione Smart Compressa -->
         <div class="feature-card">
             <h3>🔗 Condivisione Liste via Link Compresso</h3>
             <p>
@@ -335,7 +434,6 @@
             </div>
         </div>
 
-        <!-- 8. Ricerca Storica Semantica -->
         <div class="feature-card">
             <h3>🔍 Motore di Ricerca Storico con Statistiche</h3>
             <p>
@@ -349,7 +447,6 @@
             </div>
         </div>
 
-        <!-- 9. Architettura e Fluidità -->
         <div class="feature-card">
             <h3>⚙️ Dettagli Tecnici e Interfaccia</h3>
             <p>
@@ -364,7 +461,6 @@
             </div>
         </div>
 
-        <!-- SEZIONE DOWNLOAD PLAY STORE -->
         <div class="download-section">
             <h2>Disponibile su Google Play</h2>
             <p>Scarica AI Controllo Spesa sul tuo smartphone Android per iniziare a gestire la spesa in modo intelligente.</p>
@@ -373,17 +469,57 @@
             </div>
         </div>
 
-        <!-- AZIONI DI NAVIGAZIONE INFERIORI -->
         <div class="bottom-actions">
             <a href="https://nexpo83.github.io/nexposstudio/#" class="btn-home">← Torna alla lista delle applicazioni</a>
         </div>
 
     </div>
 
-    <!-- Footer -->
     <div class="footer-page">
         <p>&copy; 2026 neXPo's Studio. Sviluppato interamente in ambiente nativo.</p>
     </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'it',
+                includedLanguages: 'en,es,fr,de,it',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function cambiaLingua(lang) {
+            if (lang === "") return;
+            var selectGoogle = document.querySelector('select.goog-te-combo');
+            if (selectGoogle) {
+                selectGoogle.value = lang;
+                var event = document.createEvent("HTMLEvents");
+                event.initEvent("change", true, true);
+                selectGoogle.dispatchEvent(event);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new MutationObserver(function(mutations) {
+                if (document.body.style.top !== '0px' && document.body.style.top !== '') {
+                    document.body.style.setProperty('top', '0px', 'important');
+                }
+                const banner = document.querySelector('.goog-te-banner-frame');
+                if (banner) {
+                    banner.style.setProperty('display', 'none', 'important');
+                    banner.style.setProperty('height', '0px', 'important');
+                }
+            });
+
+            observer.observe(document.body, { 
+                attributes: true, 
+                attributeFilter: ['style'] 
+            });
+        });
+    </script>
 
 </body>
 </html>
