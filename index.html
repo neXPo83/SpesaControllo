@@ -61,6 +61,18 @@
             border-bottom: 4px solid #2e7d32;
         }
 
+        /* Stile per l'icona dell'app */
+        .app-icon {
+            width: 110px;
+            height: 110px;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            margin-bottom: 15px;
+            object-fit: cover;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
         .header-banner h1 {
             margin: 0;
             font-size: 28pt;
@@ -328,6 +340,8 @@
     <div id="google_translate_element"></div>
 
     <div class="header-banner">
+        <img src="icona_app.png" alt="Icona AI Controllo Spesa" class="app-icon" onerror="this.style.display='none'">
+        
         <h1>AI Controllo Spesa</h1>
         <p>L'Assistente Smart e Avanzato per la Gestione della Spesa Quotidiana</p>
     </div>
@@ -370,15 +384,26 @@
         </div>
 
         <div class="feature-card">
-            <h3>🎙️ Input Vocale Doppia Modalità</h3>
+            <h3>🎙️ Input Vocale Doppia Modalità &amp; Ricette AI</h3>
             <p>
                 Aggiungi prodotti alla lista senza toccare lo schermo. La modalità <strong>Standard</strong> analizza le parole chiave e i separatori vocali 
                 per inserire elenchi multipli separati da virgole. La modalità <strong>Voce AI</strong> elabora il linguaggio naturale: puoi dettare una frase fluida 
-                come <i>"Prendimi del latte, due confezioni di pomodori e lo sgrassatore per i piatti"</i> e l'IA estrarrà chirurgicamente i singoli articoli per te.
+                come <i>"Prendimi del latte e due confezioni di pomodori"</i>, oppure <strong>chiedere gli ingredienti di una ricetta</strong> (es. <i>"Cosa mi serve per fare il tiramisù?"</i>) e l'IA estrarrà chirurgicamente o genererà l'elenco esatto degli articoli per te.
             </p>
             <div class="badge-container">
                 <span class="badge">Speech Recognizer</span>
                 <span class="badge badge-ai">NLP Gemini Engine</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>⭐ Recensioni In-App Integrate</h3>
+            <p>
+                L'applicazione supporta il rilascio di feedback e valutazioni senza mai doverla abbandonare. Grazie all'integrazione delle API native di Google Play, un comodo pannello a comparsa ti permetterà di lasciare le tue stelle direttamente al salvataggio o alla chiusura di una sessione di spesa, garantendo un'esperienza fluida e senza interruzioni.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Google Play Core</span>
+                <span class="badge">In-App Review API</span>
             </div>
         </div>
 
@@ -425,101 +450,4 @@
             <h3>🔗 Condivisione Liste via Link Compresso</h3>
             <p>
                 Esporta e invia la tua lista della spesa o la lavagna globale a un altro dispositivo in un click. L'applicazione converte 
-                l'elenco in una stringa JSON, la comprime tramite algoritmo <strong>GZIP</strong> e la codifica in <strong>Base64 URL-Safe</strong>. 
-                Il destinatario riceverà un link compatto che, al click, aprirà automaticamente AI Controllo Spesa importando i dati senza duplicare i prodotti già presenti.
-            </p>
-            <div class="badge-container">
-                <span class="badge">GZIP Compression</span>
-                <span class="badge">Deep Linking</span>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <h3>🔍 Motore di Ricerca Storico con Statistiche</h3>
-            <p>
-                Vuoi sapere quanto hai pagato un prodotto l'ultima volta o dove lo hai comprato? Il motore di ricerca interroga lo storico delle spese chiuse. 
-                Grazie all'integrazione con l'IA, la ricerca non è solo testuale ma semantica: cercando "cibo gatti" verranno inclusi nei risultati anche prodotti registrati con marchi specifici o varianti. 
-                Il popup mostra i dettagli delle vecchie spese, il prezzo minimo, il prezzo massimo e il totale speso per quella categoria.
-            </p>
-            <div class="badge-container">
-                <span class="badge">Data Analysis</span>
-                <span class="badge badge-ai">Semantic Search</span>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <h3>⚙️ Dettagli Tecnici e Interfaccia</h3>
-            <p>
-                L'applicazione è sviluppata prestando massima attenzione alla stabilità operativa in mobilità:
-            </p>
-            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Interfaccia Protetta:</strong> Orientamento forzato in modalità verticale (Portrait) su tutte le schermate per evitare ricaricamenti improvvisi della fotocamera durante l'uso tra gli scaffali.</p>
-            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Gestione Temi:</strong> Supporto nativo completo per Tema Chiaro, Tema Scuro e sincronizzazione automatica con il Tema di Sistema.</p>
-            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Aggiornamenti In-App:</strong> Integrazione con le API ufficiali di Google Play per il download flessibile degli aggiornamenti in background, con avviso di riavvio solo a download ultimato.</p>
-            <div class="badge-container">
-                <span class="badge badge-sys">Android X</span>
-                <span class="badge badge-sys">Play In-App Updates</span>
-            </div>
-        </div>
-
-        <div class="download-section">
-            <h2>Disponibile su Google Play</h2>
-            <p>Scarica AI Controllo Spesa sul tuo smartphone Android per iniziare a gestire la spesa in modo intelligente.</p>
-            <div class="playstore-button-placeholder">
-                🤖 Google Play Store (Prossimamente)
-            </div>
-        </div>
-
-        <div class="bottom-actions">
-            <a href="https://nexpo83.github.io/nexposstudio/#" class="btn-home">← Torna alla lista delle applicazioni</a>
-        </div>
-
-    </div>
-
-    <div class="footer-page">
-        <p>&copy; 2026 neXPo's Studio. Sviluppato interamente in ambiente nativo.</p>
-    </div>
-
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'it',
-                includedLanguages: 'en,es,fr,de,it',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-
-        function cambiaLingua(lang) {
-            if (lang === "") return;
-            var selectGoogle = document.querySelector('select.goog-te-combo');
-            if (selectGoogle) {
-                selectGoogle.value = lang;
-                var event = document.createEvent("HTMLEvents");
-                event.initEvent("change", true, true);
-                selectGoogle.dispatchEvent(event);
-            }
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
-            const observer = new MutationObserver(function(mutations) {
-                if (document.body.style.top !== '0px' && document.body.style.top !== '') {
-                    document.body.style.setProperty('top', '0px', 'important');
-                }
-                const banner = document.querySelector('.goog-te-banner-frame');
-                if (banner) {
-                    banner.style.setProperty('display', 'none', 'important');
-                    banner.style.setProperty('height', '0px', 'important');
-                }
-            });
-
-            observer.observe(document.body, { 
-                attributes: true, 
-                attributeFilter: ['style'] 
-            });
-        });
-    </script>
-
-</body>
-</html>
+                l'elenco in una stringa JSON, la compr
