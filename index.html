@@ -450,4 +450,101 @@
             <h3>🔗 Condivisione Liste via Link Compresso</h3>
             <p>
                 Esporta e invia la tua lista della spesa o la lavagna globale a un altro dispositivo in un click. L'applicazione converte 
-                l'elenco in una stringa JSON, la compr
+                l'elenco in una stringa JSON, la comprime tramite algoritmo <strong>GZIP</strong> e la codifica in <strong>Base64 URL-Safe</strong>. 
+                Il destinatario riceverà un link compatto che, al click, aprirà automaticamente AI Controllo Spesa importando i dati senza duplicare i prodotti già presenti.
+            </p>
+            <div class="badge-container">
+                <span class="badge">GZIP Compression</span>
+                <span class="badge">Deep Linking</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔍 Motore di Ricerca Storico con Statistiche</h3>
+            <p>
+                Vuoi sapere quanto hai pagato un prodotto l'ultima volta o dove lo hai comprato? Il motore di ricerca interroga lo storico delle spese chiuse. 
+                Grazie all'integrazione con l'IA, la ricerca non è solo testuale ma semantica: cercando "cibo gatti" verranno inclusi nei risultati anche prodotti registrati con marchi specifici o varianti. 
+                Il popup mostra i dettagli delle vecchie spese, il prezzo minimo, il prezzo massimo e il totale speso per quella categoria.
+            </p>
+            <div class="badge-container">
+                <span class="badge">Data Analysis</span>
+                <span class="badge badge-ai">Semantic Search</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>⚙️ Dettagli Tecnici e Interfaccia</h3>
+            <p>
+                L'applicazione è sviluppata prestando massima attenzione alla stabilità operativa in mobilità:
+            </p>
+            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Interfaccia Protetta:</strong> Orientamento forzato in modalità verticale (Portrait) su tutte le schermate per evitare ricaricamenti improvvisi della fotocamera durante l'uso tra gli scaffali.</p>
+            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Gestione Temi:</strong> Supporto nativo completo per Tema Chiaro, Tema Scuro e sincronizzazione automatica con il Tema di Sistema.</p>
+            <p style="padding-left: 15px; margin-bottom: 5px;">• <strong>Aggiornamenti In-App:</strong> Integrazione con le API ufficiali di Google Play per il download flessibile degli aggiornamenti in background, con avviso di riavvio solo a download ultimato.</p>
+            <div class="badge-container">
+                <span class="badge badge-sys">Android X</span>
+                <span class="badge badge-sys">Play In-App Updates</span>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h2>Disponibile su Google Play</h2>
+            <p>Scarica AI Controllo Spesa sul tuo smartphone Android per iniziare a gestire la spesa in modo intelligente.</p>
+            <div class="playstore-button-placeholder">
+                🤖 Google Play Store (Prossimamente)
+            </div>
+        </div>
+
+        <div class="bottom-actions">
+            <a href="https://nexpo83.github.io/nexposstudio/#" class="btn-home">← Torna alla lista delle applicazioni</a>
+        </div>
+
+    </div>
+
+    <div class="footer-page">
+        <p>&copy; 2026 neXPo's Studio. Sviluppato interamente in ambiente nativo.</p>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'it',
+                includedLanguages: 'en,es,fr,de,it',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function cambiaLingua(lang) {
+            if (lang === "") return;
+            var selectGoogle = document.querySelector('select.goog-te-combo');
+            if (selectGoogle) {
+                selectGoogle.value = lang;
+                var event = document.createEvent("HTMLEvents");
+                event.initEvent("change", true, true);
+                selectGoogle.dispatchEvent(event);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new MutationObserver(function(mutations) {
+                if (document.body.style.top !== '0px' && document.body.style.top !== '') {
+                    document.body.style.setProperty('top', '0px', 'important');
+                }
+                const banner = document.querySelector('.goog-te-banner-frame');
+                if (banner) {
+                    banner.style.setProperty('display', 'none', 'important');
+                    banner.style.setProperty('height', '0px', 'important');
+                }
+            });
+
+            observer.observe(document.body, { 
+                attributes: true, 
+                attributeFilter: ['style'] 
+            });
+        });
+    </script>
+
+</body>
+</html>
