@@ -166,16 +166,24 @@
             margin-bottom: 20px;
         }
 
+        /* BOTTONE PLAY STORE AGGIORNATO */
         .playstore-button-placeholder {
             display: inline-block;
-            background-color: #24292e;
+            background-color: #1b5e20;
             color: #ffffff;
-            padding: 12px 24px;
-            border-radius: 6px;
+            padding: 14px 28px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 11pt;
-            border: 1px solid #24292e;
-            cursor: default;
+            font-size: 12pt;
+            border: 2px solid #1b5e20;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .playstore-button-placeholder:hover {
+            background-color: transparent;
+            color: #1b5e20;
         }
 
         /* Navigazione di Fine Pagina */
@@ -317,7 +325,7 @@
             color: #24292e;
         }
 
-                /* Stile per le immagini dentro le card */
+        /* Stile per le immagini dentro le card */
         .feature-image {
             width: 100%;
             height: auto;
@@ -521,11 +529,9 @@
         <div class="download-section">
             <h2>Disponibile su Google Play</h2>
             <p>Scarica AI Controllo Spesa sul tuo smartphone Android per iniziare a gestire la spesa in modo intelligente.</p>
-            <div class="playstore-button-placeholder">
-                <a href="https://play.google.com/store/apps/details?id=com.nexpo.spesacontrollo" class="playstore-button-placeholder">
-                🤖 Google Play Store
-                </a>
-            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.nexpo.spesacontrollo" class="playstore-button-placeholder">
+                ▶️ Scarica su Google Play
+            </a>
         </div>
 
         <div class="bottom-actions">
